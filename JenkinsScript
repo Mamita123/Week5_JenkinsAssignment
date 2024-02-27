@@ -2,13 +2,23 @@ pipeline {
   agent any 
 
   stages {
-      stage ('Initial'){
+      stage ('Check OUT') {
         steps {
-          echo: 'hello Jenkins'
-
+            git branch: 'main', credentialsId: 'Mamita123', url:  'https://github.com/Mamita123/Week5_JenkinsAssignment.git'
          
         }
 
       }
-}
+     stage ('Build') {
+        steps {
+           bat 'mvn clean install'
+        }
+
+      }
+
+   
+      }
+  }
+
+
 
