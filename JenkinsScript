@@ -2,23 +2,24 @@ pipeline {
   agent any 
 
   stages {
-      stage ('Check OUT') {
+      stage ('Check OUT & clean') {
         steps {
-            git branch: 'main',  url:  'https://github.com/Mamita123/Week5_JenkinsAssignment.git'
+            bat 'mvn clean -f Week5_JenkinsAssignment.git'
+            bat 'git clone https://github.com/Mamita123/Week5_JenkinsAssignment.git'
          
         }
 
       }
-     stage ('Build') {
+     stage ('install') {
         steps {
-           bat 'mvn clean install'
+           bat 'mvn install -f Week5_JenkinsAssignment.git'
         }
 
       }
 
     stage ('Test') {
         steps {
-         echo 'mvn test '
+         bat 'mvn test -f Week5_JenkinsAssignment.git '
         }
         post {
           success {
