@@ -4,21 +4,31 @@ pipeline {
   stages {
       stage ('Check OUT') {
         steps {
-            git branch: 'main', credentialsId: 'Mamita123', url:  'https://github.com/Mamita123/Week5_JenkinsAssignment.git'
+            git branch: 'main',  url:  'https://github.com/Mamita123/Week5_JenkinsAssignment.git'
          
         }
 
       }
-     stage ('') {
+     stage ('Build') {
         steps {
            bat 'mvn clean install'
         }
 
       }
 
-   
+    stage ('Test') {
+        steps {
+         echo 'mvn test '
+        }
+        post {
+          success {
+            junit '**/target/surefire-reports/TEST-*.xml'
+            jacoco(execPattern: '**/target/jacoco.exec')
+          }
+        }
+
       }
   }
 
 
-
+}
