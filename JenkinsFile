@@ -1,0 +1,15 @@
+pipeline {
+  agent any
+  environment {
+    PATH = "${env.PATH}; c:\\Windows\\System32"
+
+  }
+
+stages {
+  stage('Checkout') {
+    steps {
+      git branch: 'main', credentialsId: '',  url: 'https://github.com/Mamita123/Week5_JenkinsAssignment.git ' 
+    }
+  }
+}
+}
