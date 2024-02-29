@@ -2,13 +2,13 @@ pipeline {
   agent any 
 environment {
 PATH ="${env.PATH};c:\\windows\\system32"
-GIT_CREDENTIALS=credential('Mamita123')
+GIT_CREDENTIALS=credential('Mamita/******')
 }
   stages {
       stage ('Check OUT & clean') {
         steps {
             
-          git branch:'main', credentialsId: 'Mamita123',  url: 'https://github.com/Mamita123/Week5_JenkinsAssignment.git'
+          git branch:'main', credentialsId: 'Mamita/******',  url: 'https://github.com/Mamita123/Week5_JenkinsAssignment.git'
      
          
         }
