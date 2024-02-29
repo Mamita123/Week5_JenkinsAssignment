@@ -17,7 +17,7 @@ GIT_CREDENTIALS=credentialsId ('Mamita/******')
      stage ('install') {
         steps {
             bat 'mvn clean' 
-          bat 'mvn install' 
+            bat 'mvn install' 
         }
 
       }
