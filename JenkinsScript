@@ -1,7 +1,7 @@
 pipeline {
   agent any 
 environment {
-path ="$(env.PATH);c:\\windows\\system32"
+PATH ="${env.PATH};c:\\windows\\system32"
 }
   stages {
       stage ('Check OUT & clean') {
