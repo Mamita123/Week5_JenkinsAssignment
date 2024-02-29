@@ -8,7 +8,7 @@ GIT_CREDENTIALS=credential('Mamita123')
       stage ('Check OUT & clean') {
         steps {
             
-          git branch:'main', credentialsID: 'Mamita123',  url: 'https://github.com/Mamita123/Week5_JenkinsAssignment.git'
+          git branch:'main', credentialsId: 'Mamita123',  url: 'https://github.com/Mamita123/Week5_JenkinsAssignment.git'
      
          
         }
