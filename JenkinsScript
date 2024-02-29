@@ -2,7 +2,7 @@ pipeline {
   agent any 
 environment {
 PATH ="${env.PATH};c:\\windows\\system32"
-GIT_CREDENTIALS=credentialsId: ('Mamita/******')
+GIT_CREDENTIALS=credentialsId ('Mamita/******')
 }
   stages {
       stage ('Check OUT & clean') {
