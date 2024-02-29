@@ -24,7 +24,7 @@ GIT_CREDENTIALS=credential('Mamita123')
 
     stage ('Test') {
         steps {
-         bat 'mvn test 
+         bat 'mvn test' 
         }
         post {
           success {
