@@ -4,22 +4,24 @@ pipeline {
   stages {
       stage ('Check OUT & clean') {
         steps {
-            bat 'mvn clean -f Week5_JenkinsAssignment.git'
+            
             bat 'git clone https://github.com/Mamita123/Week5_JenkinsAssignment.git'
+     
          
         }
 
       }
      stage ('install') {
         steps {
-           bat 'mvn install -f Week5_JenkinsAssignment.git'
+            bat 'mvn clean 
+          bat 'mvn install 
         }
 
       }
 
     stage ('Test') {
         steps {
-         bat 'mvn test -f Week5_JenkinsAssignment.git '
+         bat 'mvn test 
         }
         post {
           success {
