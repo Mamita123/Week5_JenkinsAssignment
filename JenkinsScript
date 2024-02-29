@@ -1,11 +1,13 @@
 pipeline {
   agent any 
-
+environment {
+path ="$(env.PATH);c:\\windows\\system32"
+}
   stages {
       stage ('Check OUT & clean') {
         steps {
             
-            bat 'git clone https://github.com/Mamita123/Week5_JenkinsAssignment.git'
+          git branch:'main' credentialsID: 'Mamita123',  url: 'https://github.com/Mamita123/Week5_JenkinsAssignment.git'
      
          
         }
@@ -13,8 +15,8 @@ pipeline {
       }
      stage ('install') {
         steps {
-            bat 'mvn clean 
-          bat 'mvn install 
+            bat 'mvn clean' 
+          bat 'mvn install' 
         }
 
       }
